@@ -2,6 +2,7 @@ import Head from '../components/Head';
 import Navlink from '../components/Navlink';
 import CardTemplate from '../components/CardTemplate';
 import Footer from '../components/Footer';
+import ParticlesBg from 'particles-bg';
 import { 
   Jumbotron,
 } from 'react-bootstrap';
@@ -25,8 +26,7 @@ const LandingPage = () => {
         </button>
         <div className="collapse navbar-collapse" id="navbarNavDropdown">
           <ul className="navbar-nav">
-            <Navlink navClass="nav-link navLink" icon={<i className="bi bi-door-open pr-1"></i>} navLink="#" navName="Login"/>
-            <Navlink navClass="nav-link navLink" icon={<i className="bi bi-person-plus pr-1"></i>} navLink="/register" navName="Register" />
+            <Navlink />
           </ul>
         </div>
       </nav>
@@ -64,7 +64,8 @@ const LandingPage = () => {
         </div>
       </div>
 
-      <Footer footerClass="text-center border-top pt-3 mt-5"/>
+      <Footer footerClass="text-center border-top pt-5 pb-5 mt-5"/>
+      <ParticlesBg type="cobweb" bg={true} />
     </>
   );
 };
