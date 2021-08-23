@@ -115,6 +115,10 @@ class StudentController extends Controller
       'thumbnail' => $request->file('thumbnail')->store('thumbnails', ['disk' => 'public'])
     ]);
 
-    return response('Updated successfully', 200);
+    $response = [
+      'student' => $student
+    ];
+
+    return response($response, 200);
   }
 }
