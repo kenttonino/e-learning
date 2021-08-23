@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Following;
 use App\Models\Student;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -9,6 +10,28 @@ use Illuminate\Support\Facades\Hash;
 
 class StudentController extends Controller
 {
+  public function show($id)
+  {
+    $followingsTable = Following::where('student_id', $id)->where('type', 'follow')->get();
+    $followings = [];
+    foreach ($followingsTable as $following) {
+      array_push($followings, Student::find($following->student_follow));
+    }
+
+    $followersTable = Following::where('student_id', $id)->where('type', 'follower')->get();
+    $followers = [];
+    foreach ($followersTable as $following) {
+      array_push($followers, Student::find($following->student_follower));
+    }
+
+    $response = [
+      'followings' => $followings,
+      'followers' => $followers
+    ];
+
+    return response($response, 200);
+  }
+
   public function store(Request $request) 
   {
     $fields = $request->validate([
@@ -65,5 +88,20 @@ class StudentController extends Controller
     ];
 
     return response($response, 200);
+  }
+
+  public function update(Request $request) {
+    $studentDetails = Auth::user();
+    $student = Student::find($studentDetails->id);
+
+    $student->update([
+      'name' => $request->name,
+      'username' => $request->username,
+      'email' => $request->email,
+      'password' => $request->password,
+      'thumbnail' => request()->file('thumbnail')->store('thumbnails')
+    ]);
+
+    return response('Updated successfully', 200);
   }
 }
