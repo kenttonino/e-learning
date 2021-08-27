@@ -13,6 +13,7 @@ import UpdateProfilePage from './pages/UpdateProfilePage';
 import UsersPage from './pages/UsersPage';
 import UserPage from './pages/UserPage';
 import CategoriesPage from './pages/CategoriesPage';
+import QuizPage from './pages/QuizPage';
 
 
 function App() {
@@ -29,6 +30,7 @@ function App() {
           <Route path="/users" exact component={UsersPage} />
           <Route path="/users/:id" exact component={UserPage} />
           <Route path="/categories" exact component={CategoriesPage} />
+          <Route path="/quiz" exact component={QuizPage} />
           <Route>404 Not Found</Route>
         </Switch>
       </Router>
