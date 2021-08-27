@@ -153,6 +153,17 @@ const UserAuthApi = {
     };
 
     return fetch(`${process.env.REACT_APP_API}/followings/unfollow`, options);
+  },
+
+  getQuizzes: () => {
+    const options = {
+      method: 'GET',
+      headers: {
+        'Accept': 'application/json'
+      }
+    };
+
+    return fetch(`${process.env.REACT_APP_API}/quizzes`, options);
   }
 };
 
