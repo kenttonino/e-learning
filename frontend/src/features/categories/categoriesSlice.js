@@ -11,7 +11,7 @@ export const getCategories = createAsyncThunk('quizzes/all', async () => {
 const categoriesSlice = createSlice({
   name: 'categories',
   initialState: {
-    quizzes: [],
+    category: [],
     status: null, 
   },
 
@@ -21,7 +21,7 @@ const categoriesSlice = createSlice({
     },
 
     [ getCategories.fulfilled ]: (state, {payload}) => {
-      state.quizzes = payload
+      state.category = payload
       state.status = 'success'
     },
 

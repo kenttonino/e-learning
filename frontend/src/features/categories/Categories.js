@@ -7,8 +7,8 @@ import { getCategories } from "./categoriesSlice";
 
 export default function Categories() {
   const dispatch = useDispatch();
-  const { quizzes, status } = useSelector((state) => state.categories);
-  const allQuiz = quizzes.quizzes;
+  const { category, status } = useSelector((state) => state.categories);
+  const allQuiz = category.quizzes;
 
   useEffect(() => {
     dispatch(getCategories());
@@ -28,6 +28,7 @@ export default function Categories() {
                 key={quiz.id}
                 title={quiz.title}
                 text={quiz.description}
+                route={`/categories/${quiz.id}`}
               />
             ))
           }

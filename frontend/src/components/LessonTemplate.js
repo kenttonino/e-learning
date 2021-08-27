@@ -1,4 +1,5 @@
-import { Col, Card, Button } from "react-bootstrap";
+import { Col, Card } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 export default function LessonTemplate(props) {
   return (
@@ -10,7 +11,12 @@ export default function LessonTemplate(props) {
             <Card.Text>
               {props.text}
             </Card.Text>
-            <Button className="float-right px-5" variant="success">Start</Button>
+            <Link 
+              style={{'textDecoration': 'none'}} 
+              className="rounded float-right px-5 py-2 bg-success text-white"
+              to={props.route}
+              >Start
+            </Link>
           </Card.Body>
         </Card>
       </Col>

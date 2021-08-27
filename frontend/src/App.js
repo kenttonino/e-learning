@@ -30,7 +30,7 @@ function App() {
           <Route path="/users" exact component={UsersPage} />
           <Route path="/users/:id" exact component={UserPage} />
           <Route path="/categories" exact component={CategoriesPage} />
-          <Route path="/quiz" exact component={QuizPage} />
+          <Route path="/categories/:id" exact component={QuizPage} />
           <Route>404 Not Found</Route>
         </Switch>
       </Router>

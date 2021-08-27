@@ -19,14 +19,17 @@ class LessonController extends Controller
 
         $quiz = Quiz::find($request->quiz_id);
 
-        $word = Word::where('id', $request->word_id)->where('quiz_id', $request->quiz_id)->get();
+        $word = Word::find($request->word_id);
+
+        $wordsCount = Word::where('quiz_id', $request->quiz_id)->count();
 
         $choices = Choice::where('word_id', $request->word_id)->get();
 
         $response = [
             'quiz' => $quiz,
             'word' => $word,
-            'choices' => $choices
+            'choices' => $choices,
+            'questions_count' => $wordsCount
         ];
 
         return response($response, 200);
@@ -37,6 +40,7 @@ class LessonController extends Controller
         /* 
             $request
                 student_id
+                quiz_id
                 choice_id
         */
 
@@ -64,14 +68,25 @@ class LessonController extends Controller
             array_push($choices, Choice::find($answer->choice_id));
         }
 
-        $words = [];
-        foreach($choices as $choice) {
-            array_push($words, Word::find($choice->word_id));
+        $countCorrectAnswers = 0;
+        foreach ($choices as $choice) {
+            if ($choice->is_correct == 1) {
+                $countCorrectAnswers++;
+            }
+        };
+        
+        $allAnswers = [];
+        foreach ($choices as $choice) {
+            $word = Word::find($choice->word_id);
+            array_push($allAnswers, (object)[
+                'question' => $word,
+                'answer' => $choice
+            ]);
         }
 
         $response = [
-            'words' => $words,
-            'choices' => $choices
+            'answers' => $allAnswers,
+            'correct_answers' => $countCorrectAnswers
         ];
 
         return response($response, 200);

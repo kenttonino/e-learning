@@ -164,6 +164,42 @@ const UserAuthApi = {
     };
 
     return fetch(`${process.env.REACT_APP_API}/quizzes`, options);
+  },
+
+  getQuestion: (params) => {
+    const options = {
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json'
+      },
+      body: params
+    };
+
+    return fetch(`${process.env.REACT_APP_API}/lesson/quiz`, options);
+  },
+
+  storeAnswer: (params) => {
+    const options = {
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json'
+      },
+      body: params
+    };
+
+    return fetch(`${process.env.REACT_APP_API}/lesson/quiz/answer`, options);
+  },
+
+  getAnswers: (params) => {
+    const options = {
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json'
+      },
+      body: params
+    };
+
+    return fetch(`${process.env.REACT_APP_API}/lesson/quiz/answer/all`, options);
   }
 };
 
