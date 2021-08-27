@@ -6,7 +6,7 @@ const UserPage = () => {
 
   return (
     <>
-      <Head title="Users | E-Learning System" />
+      <Head title="User | E-Learning System" />
 
       <NavbarTemplate navClass="navbar navbar-expand-lg navbar-light bg-white wrapper fixed-top profileNavigation" />
 
