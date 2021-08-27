@@ -1,4 +1,5 @@
-import { Container, Row, Table, Button } from 'react-bootstrap';
+import { Container, Row, Table } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 import Head from '../components/Head';
 import AdminNavbarTemplate from '../components/AdminNavbarTemplate';
@@ -8,7 +9,7 @@ import AdminCategoriesTable from '../components/AdminCategoriesTable';
 export default function AdminCategoriesPage() {
   return (
     <>
-      <Head title="Admin Dashboard | E-Learning System" />
+      <Head title="Admin: Categories | E-Learning System" />
 
       <AdminNavbarTemplate navClass="navbar navbar-expand-lg navbar-light bg-white wrapper"/>
 
@@ -16,7 +17,11 @@ export default function AdminCategoriesPage() {
         <h1 className="text-center py-2 text-white bg-dark font-weight-bold rounded">Categories</h1>
 
         <Row className="wrapper mt-4">
-          <Button className="mb-4">Add Category</Button>
+          <Link 
+            className="mb-4 btn btn-primary" 
+            to="/admin/categories/add"
+            >Add Category
+          </Link>
           <Table striped bordered hover>
             <thead>
               <tr>

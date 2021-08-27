@@ -16,6 +16,7 @@ import CategoriesPage from './pages/CategoriesPage';
 import QuizPage from './pages/QuizPage';
 import AdminDashboardPage from './pages/AdminDashboardPage';
 import AdminCategoriesPage from './pages/AdminCategoriesPage';
+import AdminAddCategoryPage from './pages/AdminAddCategoryPage';
 
 function App() {
   return (
@@ -34,6 +35,7 @@ function App() {
           <Route path="/categories/:id" exact component={QuizPage} />
           <Route path="/admin/dashboard" exact component={AdminDashboardPage} />
           <Route path="/admin/categories" exact component={AdminCategoriesPage} />
+          <Route path="/admin/categories/add" exact component={AdminAddCategoryPage} />
           <Route>404 Not Found</Route>
         </Switch>
       </Router>

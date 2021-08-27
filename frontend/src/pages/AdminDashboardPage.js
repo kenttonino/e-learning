@@ -7,7 +7,7 @@ import defaultProfile from '../images/defaultProfile.png';
 export default function AdminDashboardPage() {
   return (
     <>
-      <Head title="Admin Dashboard | E-Learning System" />
+      <Head title="Admin: Dashboard | E-Learning System" />
 
       <AdminNavbarTemplate navClass="navbar navbar-expand-lg navbar-light bg-white wrapper"/>
 
