@@ -1,7 +1,7 @@
 import { Container, Table } from 'react-bootstrap';
 
-import NavbarTemplate from "../components/NavbarTemplate";
-import Head from "../components/Head";
+import NavbarTemplate from '../components/NavbarTemplate';
+import Head from '../components/Head';
 import UsersListData from '../dummy-data/UsersListData';
 import defaultProfile from '../images/defaultProfile.png';
 

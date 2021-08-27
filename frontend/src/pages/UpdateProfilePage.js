@@ -6,7 +6,7 @@ import { useHistory } from 'react-router';
 import { useDispatch } from 'react-redux';
 import Swal from 'sweetalert2';
 
-import { getResource } from '../redux/actions/userActions';
+import { getDashboard } from '../features/dashboard/dashboardSlice';
 import Head from '../components/Head'
 import defaultProfile from '../images/defaultProfile.png'
 import UserAuthApi from '../helpers/UserAuthApi';
@@ -16,10 +16,8 @@ export default function UpdateProfilePage() {
   const id = localStorage.getItem('id');
   const dispatch = useDispatch();
   const history = useHistory();
-  const resourceData = useSelector((state) => state.allResource.resource);
-  const followingsData = useSelector((state) => state.followingsData.followings);
-  const { followings, followers } = followingsData;
-  const { student, words_count, lesson_learned_count } = resourceData;
+  const { student, words_count, lesson_learned_count } = useSelector((state) => state.dashboard.index);
+  const { followings, followers } = useSelector((state) => state.profile.index);
   const [ name, setName ] = useState('')
   const [ username, setUsername ] = useState('');
   const [ email, setEmail ] = useState('');
@@ -42,16 +40,13 @@ export default function UpdateProfilePage() {
     formData.append('_method', 'PUT');
 
     UserAuthApi.updateInfo(formData).then(res => res.json()).then(data => {
-      if (data.student.id == id) {
+      if (`${data.student.id}` === id) {
         Swal.fire(
           'Congratulation!',
           'You have successfully updated your account',
           'success'
         ).then(() => {
-
-          UserAuthApi.getAll(data.student.id).then(res => res.json()).then(data => {
-            dispatch(getResource(data));
-          });
+          dispatch(getDashboard(id));
 
           history.push(`/profile/${id}`);
         });
@@ -61,11 +56,6 @@ export default function UpdateProfilePage() {
           title: 'Please try again',
           text: 'Something went wrong!'
         });
-
-        setName('');
-        setUsername('');
-        setEmail('');
-        setPassword('');
       }
     });
   };
@@ -170,7 +160,7 @@ export default function UpdateProfilePage() {
               />
               </Form.Group>
 
-              <Form.Group controlId="formFile">
+              <Form.Group>
                 <Form.Label>Update Profile Picture</Form.Label>
                 <Form.Control 
                   type="file"
