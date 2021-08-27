@@ -14,7 +14,8 @@ import UsersPage from './pages/UsersPage';
 import UserPage from './pages/UserPage';
 import CategoriesPage from './pages/CategoriesPage';
 import QuizPage from './pages/QuizPage';
-
+import AdminDashboardPage from './pages/AdminDashboardPage';
+import AdminCategoriesPage from './pages/AdminCategoriesPage';
 
 function App() {
   return (
@@ -31,6 +32,8 @@ function App() {
           <Route path="/users/:id" exact component={UserPage} />
           <Route path="/categories" exact component={CategoriesPage} />
           <Route path="/categories/:id" exact component={QuizPage} />
+          <Route path="/admin/dashboard" exact component={AdminDashboardPage} />
+          <Route path="/admin/categories" exact component={AdminCategoriesPage} />
           <Route>404 Not Found</Route>
         </Switch>
       </Router>
