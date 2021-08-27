@@ -3,6 +3,7 @@
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\FollowingController;
+use App\Http\Controllers\QuizController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -30,6 +31,9 @@ Route::post('/followings/unfollow', [FollowingController::class, 'unfollow']);
 
 // dashboard
 Route::get('/dashboard/{id}', [DashboardController::class, 'index']);
+
+// quizzes
+Route::get('/quizzes', [QuizController::class, 'index']);
 
 // protected routes
 Route::group(['middleware' => ['auth:sanctum']], function () {
