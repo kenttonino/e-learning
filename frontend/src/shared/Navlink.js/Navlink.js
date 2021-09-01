@@ -11,7 +11,8 @@ const Navlink = () => {
           to="/login"
           activeStyle={{
             fontWeight: "bold",
-            color: "black"
+            color: "black",
+            fontStyle: "italic"
           }}
         ><i className="bi bi-door-open pr-1"></i>Login</NavLink>
       </li>
@@ -21,7 +22,8 @@ const Navlink = () => {
           to="/register"
           activeStyle={{
             fontWeight: "bold",
-            color: "black"
+            color: "black",
+            fontStyle: "italic"
           }}
         ><i className="bi bi-person-plus pr-1"></i>Register</NavLink>
       </li>

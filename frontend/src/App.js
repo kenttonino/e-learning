@@ -5,8 +5,8 @@ import React from 'react';
 
 import './App.css';
 import Landing from './pages/shared/Landing/Landing';
+import Login from './pages/shared/Login/Login';
 import RegisterPage from './pages/RegisterPage';
-import LoginPage from './pages/LoginPage';
 import DashboardPage from './pages/DashboardPage';
 import ProfilePage from './pages/ProfilePage';
 import UpdateProfilePage from './pages/UpdateProfilePage';
@@ -25,8 +25,8 @@ function App() {
       <Router>
         <Switch>
           <Route path="/" exact component={Landing} />
+          <Route path="/login" exact component={Login} />
           <Route path="/register" exact component={RegisterPage} />
-          <Route path="/login" exact component={LoginPage} />
           <Route path="/dashboard" exact component={DashboardPage} />
           <Route path="/profile" exact component={ProfilePage} />
           <Route path="/profile/update" exact component={UpdateProfilePage} />
