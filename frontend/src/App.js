@@ -7,7 +7,7 @@ import './App.css';
 import Landing from './pages/shared/Landing/Landing';
 import Login from './pages/shared/Login/Login';
 import Register from './pages/shared/Register/Register';
-import DashboardPage from './pages/DashboardPage';
+import Dashboard from './pages/user/Dashboard/Dashboard';
 import ProfilePage from './pages/ProfilePage';
 import UpdateProfilePage from './pages/UpdateProfilePage';
 import UsersPage from './pages/UsersPage';
@@ -27,7 +27,7 @@ function App() {
           <Route path="/" exact component={Landing} />
           <Route path="/login" exact component={Login} />
           <Route path="/register" exact component={Register} />
-          <Route path="/dashboard" exact component={DashboardPage} />
+          <Route path="/dashboard" exact component={Dashboard} />
           <Route path="/profile" exact component={ProfilePage} />
           <Route path="/profile/update" exact component={UpdateProfilePage} />
           <Route path="/users" exact component={UsersPage} />

@@ -6,7 +6,7 @@ import { useHistory } from 'react-router';
 import { useDispatch } from 'react-redux';
 import Swal from 'sweetalert2';
 
-import { getDashboard } from '../features/dashboard/dashboardSlice';
+import { fetchDashboard } from '../features/dashboard/dashboardSlice';
 import Head from '../components/Head'
 import defaultProfile from '../images/defaultProfile.png'
 import UserAuthApi from '../helpers/UserAuthApi';
@@ -46,7 +46,7 @@ export default function UpdateProfilePage() {
           'You have successfully updated your account',
           'success'
         ).then(() => {
-          dispatch(getDashboard(id));
+          dispatch(fetchDashboard(id));
 
           history.push(`/profile`);
         });

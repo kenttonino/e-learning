@@ -9,7 +9,7 @@ const NavbarAdmin = (props) => {
   return (
     <>
       <nav className={props.navClass}>
-        <Link className="navbar-brand headerFont font-weight-bolder my-3" to="/admin/dashboard">
+        <Link className="navbar-brand font-weight-bolder my-3" to="/admin/dashboard">
           <span className={`p-3 rounded-lg border border-dark ${styles.brandName}`}>E-Learning System</span>
         </Link>
         <NavbarToggle />
@@ -24,4 +24,3 @@ const NavbarAdmin = (props) => {
 };
 
 export default NavbarAdmin;
-

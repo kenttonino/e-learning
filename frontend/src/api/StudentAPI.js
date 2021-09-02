@@ -33,6 +33,18 @@ const StudentAPI = {
 
     return fetch(`${process.env.REACT_APP_API}/register`, options);
   },
+
+  logout: (params) => {
+    const options = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${params}`
+      },
+    };
+
+    return fetch(`${process.env.REACT_APP_API}/logout`, options);
+  },
 };
 
 export default StudentAPI;

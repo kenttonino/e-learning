@@ -7,7 +7,7 @@ import Swal from 'sweetalert2';
 
 import { getStudent } from './userSlice';
 import { getProfile } from '../profile/profileSlice';
-import { getDashboard } from '../dashboard/dashboardSlice';
+import { fetchDashboard } from '../dashboard/dashboardSlice';
 import defaultProfile from '../../images/defaultProfile.png';
 import SpinnerTemplate from '../../components/SpinnerTemplate';
 import UserAuthApi from '../../helpers/UserAuthApi';
@@ -25,7 +25,7 @@ const User = () => {
   useEffect(() => {
     dispatch(getStudent(id));
     dispatch(getProfile(id));
-    dispatch(getDashboard(id));
+    dispatch(fetchDashboard(id));
   }, [ dispatch, id ]);
 
   useEffect(() => {
