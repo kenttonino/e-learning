@@ -15,3 +15,11 @@
 - Laravel
 - Sanctum
 - MySQL
+
+### Commands to Run
+- npm install
+- npm start
+- sudo /etc/init.d/mysql start
+- composer require
+- php artisan migrate
+- php artisan serve
