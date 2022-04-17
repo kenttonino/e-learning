@@ -1,5 +1,5 @@
-# E-Learning System App
-- This is a simple E-Learning System web application to apply my knowledge in training. 
+# E-Learning System
+- A simple E-Learning System web application to apply my knowledge in training. 
 
 ### Frontend TechStack
 - HTML
