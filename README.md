@@ -1,21 +1,9 @@
-# E-Learning System
+### Description
 - A simple E-Learning System web application to apply my knowledge in training. 
 
-### Frontend TechStack
-- HTML
-- CSS
-- Bootstrap
-- ReactJS
-- Redux
-- JavaScript
-- NodeJS
-
-### Backend TechStack
-- Rest API
-- PHP
-- Laravel
-- Sanctum
-- MySQL
+### Technologies | Packages Used
+- Frontend: ReactJS, Redux
+- Backend: Rest API, PHP, Laravel, Sanctum, MySQL
 
 ### Commands to Run
 - npm install
